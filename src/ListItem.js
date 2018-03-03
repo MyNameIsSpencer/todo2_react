@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 
-render() {
-  return(
-    <li>Make the list!</li>
-  )
+
+class ListItem extends Component {
+  render() {
+    return(
+      <li>{this.props.doThis}</li>
+    )
+  }
 }
 
 export default ListItem
