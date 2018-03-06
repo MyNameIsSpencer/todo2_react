@@ -11,6 +11,6 @@ const toDos = [
 ]
 
 ReactDOM.render(
-  <MyList theList={toDos}/>, 
+  <MyList/>, 
   document.getElementById('root'));
 registerServiceWorker();

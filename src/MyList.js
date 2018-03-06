@@ -1,28 +1,28 @@
 import React, {Component} from 'react';
 import './App.css';
 import ListItem from './ListItem';
+import ToDoList from './ToDoList';
 
 class MyList extends Component {
-  constructor(props) {
+  constructor (props) {
     super()
     this.state = {
       toDoItemArray: [
         "Buy groceries",
         "Find my sanity",
         "Lose my sanity"],
-        newItem: []
+      newItem: []
     }
   }
 
   clearList(e) {
-    console.log("Clearing List!!!!");
     this.setState({
       toDoItemArray: []
     })
   }
 
   newItemChange(e) {
-    this.setState({
+    this.setState ({
       newItem: e.target.value
     })
   }
@@ -40,16 +40,16 @@ class MyList extends Component {
   render() {
 
 
-    let theItems = this.state.toDoItemArray.map( (chore, index) => (
+  {/*  let theItems = this.state.toDoItemArray.map( (chore, index) => (
       <ListItem doThis={chore} key={index} />
-    ))
+    ))*/}
 
     return (
       <div>
         <h1> LIst of things I need to stop procrastinating: </h1>
         <ol>
           <ListItem doThis="Make the Liste"></ListItem>
-          {theItems}
+          <ToDoList toDoItemArray={this.state.toDoItemArray}/>
         </ol>
 
         <form>
@@ -64,6 +64,7 @@ class MyList extends Component {
         <button className="myButt" onClick={(e) => this.clearList(e)}>Clear it!</button>
 
         <style>{` .myButt {
+          color: black;
           font-size: 3em;
           background-color: gray;
           border: 10px outset;
@@ -72,8 +73,8 @@ class MyList extends Component {
 
         <style> {` .myInput {
           font-size: 3em;
-          background-color: azure;
-          border: 10px inset;
+          background-color: snow;
+          border: 10px inset navy;
         }`}</style>
 
         <style> {` .myInput:hover {
@@ -81,7 +82,7 @@ class MyList extends Component {
         }`}</style>
 
         <style> {` .myInput:focus {
-          background-color: azure;
+          background-color: snow;
         }`}</style>
 
       </div>
